@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://gp1mgxakamvs"]
+
+[ext_resource type="Texture2D" uid="uid://b1apewhxl8fu8" path="res://bopen.png" id="1_23svj"]
+[ext_resource type="Script" uid="uid://dvb4uux0qf4wj" path="res://bottom.gd" id="1_r5bjc"]
+[ext_resource type="Texture2D" uid="uid://bgiojckw6kby0" path="res://clooosed.png" id="2_r5bjc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uqh3i"]
+radius = 85.09406
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m4tab"]
+animations = [{
+"frames": [{
+"duration": 5.4,
+"texture": ExtResource("1_23svj")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_r5bjc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bottom" type="CharacterBody2D" unique_id=2035799734 groups=["blue affected"]]
+script = ExtResource("1_r5bjc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=128461292 groups=["blue affected"]]
+shape = SubResource("CircleShape2D_uqh3i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1227794521]
+position = Vector2(-286, -97.999985)
+rotation = -0.47413844
+scale = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_m4tab")
+autoplay = "default"
+frame_progress = 0.6463897

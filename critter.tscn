@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bcwq5grimi6ar"]
+
+[ext_resource type="Script" uid="uid://uspbmh2ypfr1" path="res://critter.gd" id="1_av5dc"]
+[ext_resource type="Texture2D" uid="uid://dts3t453kwwvq" path="res://al_frame0000.png" id="2_3clut"]
+[ext_resource type="Texture2D" uid="uid://cygaukvvcnsid" path="res://al_frame0001.png" id="3_c6kgd"]
+[ext_resource type="Texture2D" uid="uid://bs4i72yi44wdy" path="res://al_frame0002.png" id="4_32do6"]
+[ext_resource type="Texture2D" uid="uid://c45c3x78lkxvd" path="res://al_frame0003.png" id="5_hbxqb"]
+[ext_resource type="Texture2D" uid="uid://bc71u6sff5g7x" path="res://al_frame0004.png" id="6_iff47"]
+[ext_resource type="Texture2D" uid="uid://clai7c3gmytdc" path="res://al2_frame0000.png" id="7_b442k"]
+[ext_resource type="Texture2D" uid="uid://db7og65n7nb4x" path="res://al2_frame0001.png" id="8_jbmtm"]
+[ext_resource type="Texture2D" uid="uid://bic1cuiqc1h47" path="res://al2_frame0002.png" id="9_e8cg8"]
+[ext_resource type="Texture2D" uid="uid://by04rxcynbegd" path="res://al2_frame0003.png" id="10_nyk0u"]
+[ext_resource type="Texture2D" uid="uid://bgw86ujib5t2g" path="res://al2_frame0004.png" id="11_a7m8u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0t7k2"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("2_3clut")
+}, {
+"duration": 4.0,
+"texture": ExtResource("3_c6kgd")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_32do6")
+}, {
+"duration": 4.0,
+"texture": ExtResource("5_hbxqb")
+}, {
+"duration": 4.0,
+"texture": ExtResource("6_iff47")
+}],
+"loop": true,
+"name": &"default",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("7_b442k")
+}, {
+"duration": 4.0,
+"texture": ExtResource("8_jbmtm")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_e8cg8")
+}, {
+"duration": 4.0,
+"texture": ExtResource("10_nyk0u")
+}, {
+"duration": 4.0,
+"texture": ExtResource("11_a7m8u")
+}],
+"loop": true,
+"name": &"pink",
+"speed": 25.0
+}]
+
+[node name="critter" type="Node2D" unique_id=382446067]
+script = ExtResource("1_av5dc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=803276231]
+sprite_frames = SubResource("SpriteFrames_0t7k2")
+animation = &"pink"
+autoplay = "default"

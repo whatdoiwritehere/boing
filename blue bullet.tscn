@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://daphkj5e4w72v"]
+
+[ext_resource type="Script" uid="uid://ctbjy4hlb77jf" path="res://area_2d.gd" id="1_3g3rf"]
+[ext_resource type="Texture2D" uid="uid://brlp7d4nirsm0" path="res://!blue.png" id="2_3sdeo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c0nl8"]
+radius = 7.0
+
+[node name="bullet" type="Area2D" unique_id=980067594 groups=["blue affected"]]
+script = ExtResource("1_3g3rf")
+
+[node name="!blue" type="Sprite2D" parent="." unique_id=1140385695]
+texture = ExtResource("2_3sdeo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2027270071 groups=["blue affected"]]
+shape = SubResource("CircleShape2D_c0nl8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bqp358qt0jcog"]
+
+[ext_resource type="Texture2D" uid="uid://wb3fvuevup36" path="res://topen.png" id="1_on2c2"]
+[ext_resource type="Texture2D" uid="uid://bgiojckw6kby0" path="res://clooosed.png" id="2_58ij3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uqh3i"]
+radius = 85.09406
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2exal"]
+animations = [{
+"frames": [{
+"duration": 4.5,
+"texture": ExtResource("1_on2c2")
+}, {
+"duration": 1.7,
+"texture": ExtResource("2_58ij3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="top" type="CharacterBody2D" unique_id=2035799734 groups=["pink affected"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=128461292 groups=["pink affected"]]
+shape = SubResource("CircleShape2D_uqh3i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=640765940]
+position = Vector2(-291, 82)
+rotation = 0.51505023
+sprite_frames = SubResource("SpriteFrames_2exal")
+autoplay = "default"
+frame_progress = 0.28398335

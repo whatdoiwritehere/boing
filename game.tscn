@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bymmkglpp6xag"]
+
+[ext_resource type="PackedScene" uid="uid://bqvk33csvmao7" path="res://player.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://biqpufccnwlux" path="res://game.gd" id="1_ryrav"]
+[ext_resource type="PackedScene" uid="uid://bsqxk6ibyeswv" path="res://enemy.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://xrajyfpervij" path="res://bgm.tscn" id="3_feb5d"]
+[ext_resource type="Texture2D" uid="uid://xdldlmpaj841" path="res://background.png" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://bcwq5grimi6ar" path="res://critter.tscn" id="5_7jktm"]
+[ext_resource type="PackedScene" uid="uid://dis215bx84sc7" path="res://mid.tscn" id="7_eow3j"]
+[ext_resource type="PackedScene" uid="uid://gp1mgxakamvs" path="res://bottom.tscn" id="8_vef74"]
+[ext_resource type="PackedScene" uid="uid://bqp358qt0jcog" path="res://top.tscn" id="9_hve3p"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
+normal = Vector2(0.009008644, 0.99995947)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_feb5d"]
+normal = Vector2(0.99991566, -0.012985918)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fc0e3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7jktm"]
+normal = Vector2(-1, 0)
+
+[node name="Game" type="Node2D" unique_id=6485676]
+script = ExtResource("1_ryrav")
+
+[node name="player" parent="." unique_id=1663089974 instance=ExtResource("1_80nbo")]
+position = Vector2(141, 235)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1061139276]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1179451444]
+shape = SubResource("WorldBoundaryShape2D_e2o6t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=815794100]
+shape = SubResource("WorldBoundaryShape2D_feb5d")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=606427265]
+position = Vector2(304, 648)
+shape = SubResource("WorldBoundaryShape2D_fc0e3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=579675149]
+position = Vector2(1152, 439)
+shape = SubResource("WorldBoundaryShape2D_7jktm")
+
+[node name="AudioStreamPlayer" parent="." unique_id=243928975 instance=ExtResource("3_feb5d")]
+volume_db = -10.0
+
+[node name="Background" type="Sprite2D" parent="." unique_id=886196617]
+z_index = -3
+position = Vector2(577, 324)
+texture = ExtResource("4_fc0e3")
+
+[node name="enemy" parent="Background" unique_id=764152799 instance=ExtResource("2_e2o6t")]
+position = Vector2(-577, -324)
+
+[node name="Background" type="Sprite2D" parent="Background" unique_id=825893606]
+modulate = Color(0, 0, 0, 1)
+z_index = -3
+position = Vector2(0, 648)
+rotation = -3.142057
+texture = ExtResource("4_fc0e3")
+
+[node name="critter" parent="Background" unique_id=382446067 instance=ExtResource("5_7jktm")]
+z_index = 1
+position = Vector2(0, 154)
+
+[node name="CharacterBody2D" parent="Background" unique_id=2035799734 instance=ExtResource("7_eow3j")]
+position = Vector2(449, 8)
+
+[node name="bottom" parent="Background" unique_id=1141328217 instance=ExtResource("8_vef74")]
+position = Vector2(200, 219)
+
+[node name="top" parent="Background" unique_id=494647432 instance=ExtResource("9_hve3p")]
+position = Vector2(200, -226)
